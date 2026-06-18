@@ -1,7 +1,7 @@
 # Using edited csv file 
 
-import pandas as pd
-import matplotlib.pyplot as plt
+#import pandas as pd
+#import matplotlib.pyplot as plt
 import scipy.fftpack as fft
 import numpy as np
 
