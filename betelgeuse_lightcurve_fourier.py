@@ -15,8 +15,10 @@ magnitude = data["Magnitude"].astype(float)
 # Perform Fourier Transform
 # Convert magnitude to numpy array
 mag = magnitude.to_numpy()
-mag_fft = fft.fft(mag)
-frequencies = fft.fftfreq(len(mag), jd[1] - jd[0])
+mag_mean = np.mean(mag)
+mag_clean = mag - mag_mean
+mag_fft = fft.fft(mag_clean)[0:500]
+frequencies = fft.fftfreq(len(mag_clean), jd[1] - jd[0])[0:500]
 
 
 # Create plot of the light curve
